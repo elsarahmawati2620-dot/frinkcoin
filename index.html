@@ -1,60 +1,1710 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FrinkRH — $FRINKRH</title>
-  <meta name="description" content="FrinkRH ($FRINKRH) — a community-first memecoin experiment launching on Pools.trade via Robinhood Chain." />
-  <meta property="og:title" content="FrinkRH — $FRINKRH" />
-  <meta property="og:description" content="A community-first memecoin experiment launching on Pools.trade via Robinhood Chain." />
-  <meta property="og:type" content="website" />
-  <meta name="theme-color" content="#f4f0d9" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root{--cream:#f4f0d9;--ink:#10241b;--green:#19794e;--teal:#39a5ab;--yellow:#ffd13f;--muted:#66756d;--line:rgba(16,36,27,.22);--display:'Syne',sans-serif;--body:'Space Grotesk',sans-serif;--mono:'DM Mono',monospace}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);overflow-x:hidden}::selection{background:var(--yellow);color:var(--ink)}a,button{-webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible{outline:3px solid var(--teal);outline-offset:4px}
-    .wrap{width:min(1160px,calc(100% - 40px));margin:auto}.noise{position:fixed;inset:0;pointer-events:none;z-index:20;opacity:.055;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E")}
-    .topbar{position:relative;z-index:10;display:flex;align-items:center;justify-content:space-between;padding:20px 0}.brand{display:inline-flex;align-items:center;gap:10px;color:inherit;text-decoration:none}.brand img{width:38px;height:38px;object-fit:cover;object-position:50% 20%;border:2px solid var(--ink);border-radius:50%;background:var(--yellow)}.brand strong{font:800 18px var(--display);letter-spacing:-.05em}.brand strong span{color:var(--green)}.nav{display:flex;gap:32px}.nav a,.footlinks a{color:var(--muted);font-size:13px;font-weight:700;text-decoration:none}.nav a:hover,.footlinks a:hover{color:var(--ink)}.launch,.primary,.quiet{display:inline-flex;align-items:center;justify-content:center;gap:10px;border-radius:999px;padding:13px 18px;text-decoration:none;font-size:13px;font-weight:700;transition:.2s ease}.launch{border:1px solid var(--ink);color:var(--ink)}.launch:hover{background:var(--ink);color:var(--cream);transform:translateY(-2px)}.menu{display:none;border:0;background:transparent;color:var(--ink);font-size:23px}
-    .hero{position:relative;display:grid;grid-template-columns:1.03fr .97fr;align-items:center;min-height:730px;padding:58px 0 90px}.hero canvas{position:absolute;inset:0;width:100%;height:100%;z-index:-1}.eyebrow,.kicker{font:500 11px var(--mono);letter-spacing:.12em;text-transform:uppercase}.eyebrow{display:flex;align-items:center;gap:9px;color:var(--green)}.eyebrow i{width:7px;height:7px;background:var(--yellow);border-radius:50%;box-shadow:0 0 0 5px rgba(255,209,63,.2)}h1,h2,h3,h4{font-family:var(--display);letter-spacing:-.08em}h1{margin:20px 0 22px;max-width:680px;font-size:clamp(64px,9vw,125px);line-height:.87}.outline{color:transparent;-webkit-text-stroke:2px var(--ink)}.sun{color:var(--yellow)}.lede{max-width:470px;color:var(--muted);font-size:17px;line-height:1.55}.actions{display:flex;flex-wrap:wrap;gap:13px;margin-top:30px}.primary{border:1px solid var(--ink);background:var(--ink);color:var(--cream);box-shadow:5px 5px 0 var(--yellow)}.primary:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--yellow)}.quiet{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.22)}.quiet:hover{transform:translateY(-2px);border-color:var(--ink)}.hero-art{position:relative;display:flex;align-items:center;justify-content:center;min-height:510px}.orbit{position:absolute;width:min(440px,85vw);aspect-ratio:1;border:1px dashed rgba(25,121,78,.4);border-radius:50%;animation:pulse 7s ease-in-out infinite}.orbit:before,.orbit:after{content:"";position:absolute;border-radius:50%;background:var(--yellow)}.orbit:before{width:10px;height:10px;top:13%;left:11%}.orbit:after{width:16px;height:16px;right:6%;bottom:19%;background:var(--teal)}.hero-img{position:relative;z-index:1;width:min(370px,77vw);aspect-ratio:1;overflow:hidden;border:2px solid var(--ink);border-radius:42% 58% 53% 47% / 49% 38% 62% 51%;background:var(--green);box-shadow:15px 18px 0 var(--yellow);animation:drift 7s ease-in-out infinite}.hero-img img{width:100%;height:100%;object-fit:cover;object-position:50% 18%;mix-blend-mode:multiply}.tag{position:absolute;z-index:2;padding:9px 12px;border:1px solid var(--ink);background:#fbf8e9;box-shadow:4px 4px 0 var(--ink);font:10px var(--mono);letter-spacing:.04em}.tag.top{top:9%;right:1%;transform:rotate(7deg)}.tag.bottom{bottom:10%;left:0;transform:rotate(-7deg);color:var(--green)}.scroll{position:absolute;bottom:22px;display:flex;align-items:center;gap:10px;color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em}.scroll i{width:48px;height:1px;background:rgba(16,36,27,.35)}
-    .ticker{overflow:hidden;border-block:1px solid var(--ink);background:var(--yellow);transform:rotate(-1.2deg) scale(1.02)}.track{display:flex;width:max-content;animation:marquee 28s linear infinite}.ticker span{padding:14px 24px;font:800 16px var(--display);white-space:nowrap}.ticker b{font:11px var(--mono)}.section{padding:140px 0}.intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:60px;align-items:end;margin-bottom:55px}.kicker{color:var(--green)}h2{max-width:690px;margin:12px 0 0;font-size:clamp(40px,6vw,77px);line-height:.92}.intro h2 em{color:var(--green);font-style:normal}.copy{max-width:410px;color:var(--muted);font-size:16px;line-height:1.65}
-    .manifesto{display:grid;grid-template-columns:1.1fr .9fr;gap:18px}.manifesto-main{min-height:405px;padding:38px;display:flex;flex-direction:column;justify-content:space-between;border:1px solid var(--ink);background:var(--green);color:#fbf8e9}.mono{font:11px var(--mono)}.manifesto-main h3{max-width:580px;margin:0;font-size:clamp(32px,5vw,65px);line-height:.95}.manifesto-main p{max-width:420px;margin:35px 0 0;color:rgba(251,248,233,.76);font-size:14px;line-height:1.6}.side{display:grid;grid-template-rows:1fr 1fr;gap:18px}.card{position:relative;overflow:hidden;padding:28px;border:1px solid var(--ink);background:#fbf8e9}.card h4{margin:0 0 46px;font-size:22px}.card p{max-width:240px;margin:0;color:var(--muted);font-size:13px;line-height:1.55}.num{position:absolute;top:19px;right:22px;color:var(--yellow);font:12px var(--mono)}.mark{position:absolute;right:22px;bottom:20px;width:55px;height:55px;border:1px solid var(--ink);border-radius:50%}.mark:after{content:"";position:absolute;inset:12px;border-radius:50%;background:var(--teal)}
-    .dark{background:var(--ink);color:var(--cream)}.dark .kicker{color:var(--yellow)}.dark h2{color:var(--cream)}.dark h2 em{color:var(--yellow)}.dark .copy{color:rgba(244,240,217,.65)}.snap{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid rgba(244,240,217,.24);border-left:1px solid rgba(244,240,217,.24)}.cell{min-height:170px;padding:25px;border-right:1px solid rgba(244,240,217,.24);border-bottom:1px solid rgba(244,240,217,.24)}.label{color:rgba(244,240,217,.52);font:10px var(--mono);letter-spacing:.13em;text-transform:uppercase}.value{margin-top:28px;font:800 clamp(25px,4vw,47px) var(--display);letter-spacing:-.06em}.value.accent{color:var(--yellow)}.address{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:24px;min-height:auto}.address p{margin:6px 0 0;color:rgba(244,240,217,.58);font-size:12px}.copybtn{display:inline-flex;align-items:center;gap:10px;cursor:pointer;border:1px solid rgba(244,240,217,.38);border-radius:999px;padding:11px 14px;background:transparent;color:var(--cream);font:10px var(--mono);white-space:nowrap}.copybtn:hover{background:var(--yellow);border-color:var(--yellow);color:var(--ink)}
-    .how{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.howcard{min-height:265px;padding:28px;border:1px solid var(--ink);background:#fbf8e9;display:flex;flex-direction:column;justify-content:space-between;transition:.25s ease}.howcard:hover{transform:translateY(-8px) rotate(-.5deg);background:var(--yellow)}.howcard small{color:var(--green);font:12px var(--mono)}.howcard h3{margin:30px 0 0;font-size:30px;line-height:1}.howcard p{margin:20px 0 0;color:var(--muted);font-size:13px;line-height:1.55}.cta{position:relative;overflow:hidden;display:grid;grid-template-columns:1fr auto;align-items:center;gap:30px;margin-top:88px;padding:48px;background:var(--teal);border:1px solid var(--ink)}.cta:before{content:"$FRINKRH";position:absolute;right:-20px;bottom:-50px;color:rgba(16,36,27,.08);font:800 150px var(--display);letter-spacing:-.1em;pointer-events:none}.cta h2,.cta p{position:relative}.cta h2{margin:0;font-size:clamp(34px,5vw,65px);line-height:.92}.cta p{max-width:390px;margin:18px 0 0;color:rgba(16,36,27,.65);font-size:14px;line-height:1.5}.footer{padding:34px 0 44px;border-top:1px solid rgba(16,36,27,.2)}.foottop,.footbottom{display:flex;justify-content:space-between;gap:30px;align-items:flex-start}.footnote{max-width:360px;margin:17px 0 0;color:var(--muted);font-size:12px;line-height:1.55}.footlinks{display:flex;gap:25px;align-items:center}.footbottom{align-items:center;margin-top:70px;padding-top:18px;border-top:1px solid rgba(16,36,27,.12);color:var(--muted);font:10px var(--mono);text-transform:uppercase;letter-spacing:.06em}.toast{position:fixed;z-index:30;left:50%;bottom:24px;transform:translateX(-50%);padding:12px 17px;border:1px solid var(--ink);background:var(--yellow);box-shadow:5px 5px 0 var(--ink);font:11px var(--mono)}.cursor,.ring{position:fixed;z-index:40;pointer-events:none;border-radius:50%;transform:translate(-50%,-50%)}.cursor{width:7px;height:7px;background:var(--yellow)}.ring{width:30px;height:30px;border:1px solid rgba(16,36,27,.55);transition:.2s ease}
-    .nft-section{background:var(--teal)}.nft-panel{position:relative;overflow:hidden;display:grid;grid-template-columns:.95fr 1.05fr;gap:30px;align-items:center;min-height:480px;padding:56px;border:1px solid var(--ink);background:var(--teal)}.nft-copy{position:relative;z-index:2}.nft-copy .kicker{color:rgba(16,36,27,.66)}.nft-copy h2{margin:22px 0 18px;font-size:clamp(44px,6vw,78px);line-height:.88}.nft-copy h2 em{color:var(--yellow);font-style:normal}.nft-copy p{max-width:400px;margin:0;color:rgba(16,36,27,.67);font-size:15px;line-height:1.6}.nft-status{display:inline-flex;align-items:center;gap:8px;margin-top:25px;padding:8px 11px;border:1px solid rgba(16,36,27,.35);border-radius:999px;font:10px var(--mono);letter-spacing:.1em;text-transform:uppercase}.nft-status-dot{width:7px;height:7px;border-radius:50%;background:var(--yellow);box-shadow:0 0 0 4px rgba(255,209,63,.2)}.nft-follow{margin-top:28px;border-color:rgba(16,36,27,.4);background:transparent}.nft-visual{position:relative;display:grid;place-items:center;min-height:350px}.nft-ring{position:absolute;border:1px dashed rgba(16,36,27,.28);border-radius:50%}.nft-ring-one{width:340px;aspect-ratio:1;transform:rotate(18deg)}.nft-ring-two{width:245px;aspect-ratio:1;border-style:solid;opacity:.45;transform:rotate(-26deg)}.nft-card{position:relative;z-index:1;display:flex;flex-direction:column;justify-content:space-between;width:min(270px,70vw);aspect-ratio:.8;padding:20px;border:2px solid var(--ink);background:var(--yellow);box-shadow:13px 13px 0 var(--ink);transform:rotate(6deg)}.nft-card span,.nft-card small{font:10px var(--mono);letter-spacing:.08em}.nft-card strong{font:800 clamp(38px,5vw,62px) var(--display);line-height:.82;letter-spacing:-.08em}.nft-card small{color:rgba(16,36,27,.66);line-height:1.4}.nft-spark{position:absolute;width:14px;height:14px;border:2px solid var(--ink);background:var(--yellow);transform:rotate(45deg)}.nft-spark-one{top:8%;right:10%}.nft-spark-two{bottom:9%;left:10%;width:9px;height:9px;background:var(--ink)}
-    .reveal{opacity:0;transform:translateY(22px)}.reveal.show{animation:reveal .7s cubic-bezier(.22,.8,.24,1) forwards}@keyframes drift{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}@keyframes pulse{0%,100%{opacity:.42;transform:scale(1)}50%{opacity:.7;transform:scale(1.08)}}@keyframes marquee{to{transform:translateX(-50%)}}@keyframes reveal{to{opacity:1;transform:none}}
-    @media(max-width:800px){.wrap{width:min(calc(100% - 30px),620px)}.nav,.launch{display:none}.menu{display:block}.hero{grid-template-columns:1fr;min-height:auto;padding:45px 0 70px}.hero-art{min-height:430px;margin-top:20px}.scroll{display:none}.section{padding:95px 0}.intro{grid-template-columns:1fr;gap:18px;margin-bottom:34px}.manifesto{grid-template-columns:1fr}.manifesto-main{min-height:340px;padding:27px}.snap{grid-template-columns:1fr 1fr}.address{display:block}.copybtn{margin-top:18px}.nft-panel{grid-template-columns:1fr;min-height:auto;padding:30px 25px 42px}.nft-visual{min-height:310px;margin-top:12px}.nft-ring-one{width:280px}.nft-ring-two{width:205px}.how{grid-template-columns:1fr}.howcard{min-height:210px}.cta{grid-template-columns:1fr;padding:30px 25px;margin-top:60px}.foottop,.footbottom{flex-direction:column}.footbottom{margin-top:45px}.cursor,.ring{display:none}}
-    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.reveal{opacity:1;transform:none}}
-  </style>
-</head>
-<body>
-  <div class="noise"></div><div class="cursor"></div><div class="ring"></div>
-  <header class="wrap topbar">
-    <a class="brand" href="#top"><img src="https://i.imgur.com/wBfcuaN.png" alt="FrinkRH character"><strong>Frink<span>RH</span></strong></a>
-    <nav class="nav" aria-label="Primary navigation"><a href="#story">The story</a><a href="#snapshot">Snapshot</a><a href="#nft">NFT lab</a><a href="#how">How to join</a></nav>
-    <a class="launch" href="https://pools.trade/" target="_blank" rel="noreferrer">Launch on Pools ↗</a>
-    <button class="menu" aria-label="Open menu" aria-expanded="false">☰</button>
-  </header>
-  <main>
-    <section class="wrap hero" id="top">
-      <canvas aria-hidden="true"></canvas>
-      <div><div class="eyebrow"><i></i> Community experiment / Robinhood Chain</div><h1>The <span class="outline">odd</span><br>one out<span class="sun">.</span></h1><p class="lede">FrinkRH is a community-first memecoin with a lab coat, a loud internet presence, and absolutely no interest in acting normal.</p><div class="actions"><a class="primary" href="https://pools.trade/" target="_blank" rel="noreferrer">Enter Pools.trade →</a><a class="quiet" href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">Follow the lab ↗</a></div><div class="scroll"><i></i> scroll to investigate</div></div>
-      <div class="hero-art"><div class="orbit"></div><div class="tag top">SPECIMEN: $FRINKRH</div><div class="hero-img"><img src="https://i.imgur.com/wBfcuaN.png" alt="FrinkRH, the curious lab-coated character"></div><div class="tag bottom">STATUS: UNBOTHERED</div></div>
-    </section>
-    <div class="ticker"><div class="track"><div class="ticker"><span>$FRINKRH</span><b>COMMUNITY FIRST</b><span>◆</span><span>ROBINHOOD CHAIN</span><b>POOLS.TRADE</b><span>◆</span></div><div class="ticker"><span>$FRINKRH</span><b>COMMUNITY FIRST</b><span>◆</span><span>ROBINHOOD CHAIN</span><b>POOLS.TRADE</b><span>◆</span></div></div></div>
-    <section class="wrap section" id="story"><div class="intro reveal"><div class="kicker">01 / The thesis</div><div><h2>A little <em>weird.</em><br>A lot of together.</h2><p class="copy">No grand promises. No pretend utility. Just a recognizable character, a shared joke, and a community finding its corner of the chain.</p></div></div><div class="manifesto reveal"><article class="manifesto-main"><span class="mono">FIELD NOTES / 001</span><div><h3>Curiosity is a community sport.</h3><p>FrinkRH gives the timeline something to rally around: a bright yellow outlier with a curious mind and a very online point of view.</p></div></article><div class="side"><article class="card"><span class="num">01</span><h4>People before polish.</h4><p>The community is the product. Share the signal, bring your own strange, and make the room more interesting.</p><span class="mark"></span></article><article class="card"><span class="num">02</span><h4>Memecoin, honestly.</h4><p>We are here for the culture and the experiment. Read the disclaimer. Keep your expectations grounded.</p><span class="mark"></span></article></div></div></section>
-    <section class="dark section" id="snapshot"><div class="wrap"><div class="intro reveal"><div class="kicker">02 / Read the label</div><div><h2>Small token.<br><em>Big specimen.</em></h2><p class="copy">The useful facts, without the fictional roadmap. Keep this page bookmarked for the launch signal.</p></div></div><div class="snap reveal"><div class="cell"><div class="label">Name</div><div class="value">FrinkRH</div></div><div class="cell"><div class="label">Ticker</div><div class="value accent">$FRINKRH</div></div><div class="cell"><div class="label">Network</div><div class="value">Robinhood Chain</div></div><div class="cell"><div class="label">Launch venue</div><div class="value">Pools.trade</div></div><div class="cell address"><div><div class="label">Contract address / coming soon</div><p>Placeholder only. Replace this string before sharing any contract details.</p></div><button class="copybtn" type="button">⧉ Copy placeholder</button></div></div></div></section>
-    <section class="nft-section section" id="nft" aria-labelledby="nft-title"><div class="wrap"><div class="nft-panel reveal"><div class="nft-copy"><div class="kicker">03 / The collection lab</div><div class="nft-status"><span class="nft-status-dot"></span> Coming soon</div><h2 id="nft-title">FrinkRH<br><em>specimens.</em></h2><p>Something collectible is taking shape in the lab. NFT details, artwork, and mint information will be shared when the experiment is ready.</p><a class="quiet nft-follow" href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">Get the signal ↗</a></div><div class="nft-visual" aria-hidden="true"><div class="nft-ring nft-ring-one"></div><div class="nft-ring nft-ring-two"></div><div class="nft-card"><span>FRINKRH / NFT-?</span><strong>COMING<br>SOON</strong><small>COLLECTION STATUS: IN THE LAB</small></div><div class="nft-spark nft-spark-one"></div><div class="nft-spark nft-spark-two"></div></div></div></div></section>
-    <section class="wrap section" id="how"><div class="intro reveal"><div class="kicker">04 / Join the experiment</div><div><h2>Three moves.<br><em>No secret handshake.</em></h2></div></div><div class="how reveal"><article class="howcard"><small>MOVE 01</small><div><h3>Find the signal.</h3><p>Follow the official account for the cleanest launch updates and community noise.</p></div><b>↘</b></article><article class="howcard"><small>MOVE 02</small><div><h3>Bring a friend.</h3><p>Memes, questions, curiosity — the lab is more fun when the room is full.</p></div><b>↘</b></article><article class="howcard"><small>MOVE 03</small><div><h3>Check Pools.trade.</h3><p>When launch time arrives, use the official destination and verify details yourself.</p></div><b>↘</b></article></div><div class="cta reveal"><div><h2>Meet us<br>on-chain.</h2><p>Launch destination: Pools.trade on Robinhood Chain. This button goes to the venue homepage until an exact pool URL is available.</p></div><a class="primary" href="https://pools.trade/" target="_blank" rel="noreferrer">Open Pools.trade ↗</a></div></section>
-  </main>
-  <footer class="wrap footer"><div class="foottop"><div><a class="brand" href="#top"><img src="https://i.imgur.com/wBfcuaN.png" alt="FrinkRH character"><strong>Frink<span>RH</span></strong></a><p class="footnote">A community-first memecoin experiment launching on Pools.trade via Robinhood Chain.</p></div><div class="footlinks"><a href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">X / @Frink_RH ↗</a><a href="#snapshot">Token snapshot</a><a href="#nft">NFT lab</a></div></div><div class="footbottom"><span>© FrinkRH community</span><span>Memecoin / no guarantees / do your own research</span></div></footer>
-  <script>
-    const canvas=document.querySelector('canvas'),ctx=canvas.getContext('2d'),reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,particles=Array.from({length:reduce?18:52},(_,i)=>({x:Math.random(),y:Math.random(),r:Math.random()*1.8+.4,a:Math.random()*.35+.1,p:i*.7,s:Math.random()*.00018+.00005}));let frame=0;function resize(){const d=devicePixelRatio||1;canvas.width=canvas.clientWidth*d;canvas.height=canvas.clientHeight*d;ctx.setTransform(d,0,0,d,0,0)}function paint(t){const w=canvas.clientWidth,h=canvas.clientHeight;ctx.clearRect(0,0,w,h);particles.forEach(q=>{const x=q.x*w+Math.sin(t*q.s+q.p)*18,y=((q.y+(reduce?0:t*q.s*.12))%1)*h;ctx.beginPath();ctx.arc(x,y,q.r,0,Math.PI*2);ctx.fillStyle=`rgba(25,121,78,${q.a})`;ctx.fill()});if(!reduce)frame=requestAnimationFrame(paint)}resize();addEventListener('resize',resize);frame=requestAnimationFrame(paint);
-    const dot=document.querySelector('.cursor'),ring=document.querySelector('.ring');addEventListener('mousemove',e=>{dot.style.left=ring.style.left=e.clientX+'px';dot.style.top=ring.style.top=e.clientY+'px'});addEventListener('mouseover',e=>{if(e.target.closest('a,button')){ring.style.width='44px';ring.style.height='44px';ring.style.background='rgba(255,209,63,.16)'}});addEventListener('mouseout',e=>{if(e.target.closest('a,button')){ring.style.width='30px';ring.style.height='30px';ring.style.background='transparent'}});
-    const menu=document.querySelector('.menu');menu.addEventListener('click',()=>{let nav=document.querySelector('.mobile-nav');if(nav){nav.remove();menu.setAttribute('aria-expanded','false');return}nav=document.createElement('nav');nav.className='mobile-nav';nav.setAttribute('aria-label','Mobile navigation');nav.innerHTML='<a href="#story">The story</a><a href="#snapshot">Snapshot</a><a href="#nft">NFT lab</a><a href="#how">How to join</a><a href="https://pools.trade/" target="_blank">Open Pools.trade</a>';Object.assign(nav.style,{position:'absolute',top:'74px',left:'15px',right:'15px',zIndex:30,display:'flex',flexDirection:'column',gap:'3px',padding:'9px',border:'1px solid var(--ink)',background:'#fbf8e9',boxShadow:'6px 6px 0 var(--yellow)'});nav.querySelectorAll('a').forEach(a=>Object.assign(a.style,{padding:'13px 12px',color:'var(--ink)',textDecoration:'none',font:'700 20px var(--display)'}));document.querySelector('header').append(nav);menu.setAttribute('aria-expanded','true')});
-    const copy=document.querySelector('.copybtn');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText('CONTRACT_COMING_SOON_UPDATE_ME');copy.textContent='✓ Copied';const toast=document.createElement('div');toast.className='toast';toast.textContent='Placeholder copied — update before launch';document.body.append(toast);setTimeout(()=>toast.remove(),2200);setTimeout(()=>copy.textContent='⧉ Copy placeholder',2200)}catch{copy.textContent='Copy unavailable'}});
-    document.querySelectorAll('.reveal').forEach(el=>{if(reduce){el.classList.add('show');return}new IntersectionObserver(([e],o)=>{if(e.isIntersecting){el.classList.add('show');o.disconnect()}},{threshold:.12}).observe(el)});
-  </script>
-</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>FrinkRH — $FRINKRH</title>
+    <meta
+      name="description"
+      content="FrinkRH ($FRINKRH) — a community-first memecoin experiment launching on Pools.trade via Robinhood Chain."
+    />
+    <meta property="og:title" content="FrinkRH — $FRINKRH" />
+    <meta
+      property="og:description"
+      content="A community-first memecoin experiment launching on Pools.trade via Robinhood Chain."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#f4f0d9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --cream: #f4f0d9;
+        --paper: #fbf8e9;
+        --ink: #10241b;
+        --green: #19794e;
+        --teal: #39a5ab;
+        --yellow: #ffd13f;
+        --muted: #66756d;
+        --line: rgba(16, 36, 27, 0.22);
+        --display: "Syne", sans-serif;
+        --body: "Space Grotesk", sans-serif;
+        --mono: "DM Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        overflow-x: hidden;
+        background: var(--cream);
+        color: var(--ink);
+        font-family: var(--body);
+        -webkit-font-smoothing: antialiased;
+      }
+
+      ::selection {
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      a,
+      button {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      a:focus-visible,
+      button:focus-visible {
+        outline: 3px solid var(--teal);
+        outline-offset: 4px;
+      }
+
+      button {
+        font: inherit;
+      }
+
+      .site {
+        position: relative;
+      }
+
+      .wrap {
+        width: min(1160px, calc(100% - 40px));
+        margin: 0 auto;
+      }
+
+      .noise {
+        position: fixed;
+        inset: 0;
+        z-index: 20;
+        pointer-events: none;
+        opacity: 0.055;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+      }
+
+      .topbar {
+        position: relative;
+        z-index: 30;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .brand img {
+        width: 38px;
+        height: 38px;
+        border: 2px solid var(--ink);
+        border-radius: 50%;
+        background: var(--yellow);
+        object-fit: cover;
+        object-position: 50% 20%;
+      }
+
+      .brand strong {
+        font: 800 18px var(--display);
+        letter-spacing: -0.05em;
+      }
+
+      .brand strong span {
+        color: var(--green);
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+      }
+
+      .nav a,
+      .footlinks a {
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+      }
+
+      .nav a:hover,
+      .footlinks a:hover {
+        color: var(--ink);
+      }
+
+      .launch,
+      .primary,
+      .quiet {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 9px;
+        border-radius: 999px;
+        padding: 13px 18px;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition:
+          transform 0.2s ease,
+          background-color 0.2s ease,
+          color 0.2s ease,
+          box-shadow 0.2s ease,
+          border-color 0.2s ease;
+      }
+
+      .launch {
+        border: 1px solid var(--ink);
+        color: var(--ink);
+      }
+
+      .launch:hover {
+        background: var(--ink);
+        color: var(--cream);
+        transform: translateY(-2px);
+      }
+
+      .menu {
+        display: none;
+        border: 0;
+        padding: 5px;
+        background: transparent;
+        color: var(--ink);
+        cursor: pointer;
+      }
+
+      .menu-glyph,
+      .menu-glyph::before,
+      .menu-glyph::after {
+        display: block;
+        width: 24px;
+        height: 2px;
+        background: currentColor;
+        content: "";
+        transition: transform 0.2s ease;
+      }
+
+      .menu-glyph {
+        position: relative;
+        margin: 7px 0;
+      }
+
+      .menu-glyph::before,
+      .menu-glyph::after {
+        position: absolute;
+        left: 0;
+      }
+
+      .menu-glyph::before {
+        top: -7px;
+      }
+
+      .menu-glyph::after {
+        top: 7px;
+      }
+
+      .menu-glyph.is-close {
+        background: transparent;
+      }
+
+      .menu-glyph.is-close::before {
+        top: 0;
+        transform: rotate(45deg);
+      }
+
+      .menu-glyph.is-close::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+
+      .mobile-nav {
+        position: absolute;
+        top: 74px;
+        right: 15px;
+        left: 15px;
+        z-index: 40;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        padding: 9px;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+        box-shadow: 6px 6px 0 var(--yellow);
+      }
+
+      .mobile-nav a {
+        padding: 13px 12px;
+        color: var(--ink);
+        font: 700 20px var(--display);
+        text-decoration: none;
+      }
+
+      .mobile-nav a:hover {
+        background: var(--yellow);
+      }
+
+      .hero {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1.03fr 0.97fr;
+        align-items: center;
+        min-height: 730px;
+        padding: 58px 0 90px;
+      }
+
+      .hero canvas {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+
+      .hero > div:not(.hero-art) {
+        position: relative;
+        z-index: 1;
+      }
+
+      .eyebrow,
+      .kicker {
+        font: 500 11px var(--mono);
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: var(--green);
+      }
+
+      .eyebrow i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--yellow);
+        box-shadow: 0 0 0 5px rgba(255, 209, 63, 0.2);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        margin-top: 0;
+        font-family: var(--display);
+        letter-spacing: -0.08em;
+      }
+
+      h1 {
+        max-width: 680px;
+        margin-bottom: 22px;
+        font-size: clamp(64px, 9vw, 125px);
+        line-height: 0.87;
+      }
+
+      .outline {
+        color: transparent;
+        -webkit-text-stroke: 2px var(--ink);
+      }
+
+      .sun {
+        color: var(--yellow);
+      }
+
+      .lede {
+        max-width: 470px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.55;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 13px;
+        margin-top: 30px;
+      }
+
+      .primary {
+        border: 1px solid var(--ink);
+        background: var(--ink);
+        color: var(--cream);
+        box-shadow: 5px 5px 0 var(--yellow);
+      }
+
+      .primary:hover {
+        box-shadow: 8px 8px 0 var(--yellow);
+        transform: translate(-2px, -2px);
+      }
+
+      .quiet {
+        border: 1px solid var(--line);
+        background: rgba(255, 255, 255, 0.22);
+        color: var(--ink);
+      }
+
+      .quiet:hover {
+        border-color: var(--ink);
+        transform: translateY(-2px);
+      }
+
+      .hero-art {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 510px;
+      }
+
+      .orbit {
+        position: absolute;
+        width: min(440px, 85vw);
+        aspect-ratio: 1;
+        border: 1px dashed rgba(25, 121, 78, 0.4);
+        border-radius: 50%;
+        animation: pulse 7s ease-in-out infinite;
+      }
+
+      .orbit::before,
+      .orbit::after {
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        background: var(--yellow);
+      }
+
+      .orbit::before {
+        top: 13%;
+        left: 11%;
+        width: 10px;
+        height: 10px;
+      }
+
+      .orbit::after {
+        right: 6%;
+        bottom: 19%;
+        width: 16px;
+        height: 16px;
+        background: var(--teal);
+      }
+
+      .hero-img {
+        position: relative;
+        z-index: 1;
+        width: min(370px, 77vw);
+        aspect-ratio: 1;
+        overflow: hidden;
+        border: 2px solid var(--ink);
+        border-radius: 42% 58% 53% 47% / 49% 38% 62% 51%;
+        background: var(--green);
+        box-shadow: 15px 18px 0 var(--yellow);
+        animation: drift 7s ease-in-out infinite;
+      }
+
+      .hero-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 18%;
+        mix-blend-mode: multiply;
+      }
+
+      .tag {
+        position: absolute;
+        z-index: 2;
+        padding: 9px 12px;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+        box-shadow: 4px 4px 0 var(--ink);
+        font: 10px var(--mono);
+        letter-spacing: 0.04em;
+      }
+
+      .tag.top {
+        top: 9%;
+        right: 1%;
+        transform: rotate(7deg);
+      }
+
+      .tag.bottom {
+        bottom: 10%;
+        left: 0;
+        color: var(--green);
+        transform: rotate(-7deg);
+      }
+
+      .scroll {
+        position: absolute;
+        bottom: 22px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+        font: 10px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .scroll i {
+        width: 48px;
+        height: 1px;
+        background: rgba(16, 36, 27, 0.35);
+      }
+
+      .ticker {
+        overflow: hidden;
+        border-block: 1px solid var(--ink);
+        background: var(--yellow);
+        transform: rotate(-1.2deg) scale(1.02);
+      }
+
+      .track {
+        display: flex;
+        width: max-content;
+        animation: marquee 28s linear infinite;
+      }
+
+      .ticker-item {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+        padding: 14px 24px;
+        white-space: nowrap;
+      }
+
+      .ticker-item span {
+        font: 800 16px var(--display);
+      }
+
+      .ticker-item b {
+        font: 11px var(--mono);
+      }
+
+      .section {
+        padding: 140px 0;
+      }
+
+      .intro {
+        display: grid;
+        grid-template-columns: 0.75fr 1.25fr;
+        gap: 60px;
+        align-items: end;
+        margin-bottom: 55px;
+      }
+
+      .kicker {
+        color: var(--green);
+      }
+
+      h2 {
+        max-width: 690px;
+        margin: 12px 0 0;
+        font-size: clamp(40px, 6vw, 77px);
+        line-height: 0.92;
+      }
+
+      .intro h2 em {
+        color: var(--green);
+        font-style: normal;
+      }
+
+      .copy {
+        max-width: 410px;
+        color: var(--muted);
+        font-size: 16px;
+        line-height: 1.65;
+      }
+
+      .manifesto {
+        display: grid;
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 18px;
+      }
+
+      .manifesto-main {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 405px;
+        padding: 38px;
+        border: 1px solid var(--ink);
+        background: var(--green);
+        color: var(--paper);
+      }
+
+      .mono {
+        font: 11px var(--mono);
+      }
+
+      .manifesto-main h3 {
+        max-width: 580px;
+        margin-bottom: 0;
+        font-size: clamp(32px, 5vw, 65px);
+        line-height: 0.95;
+      }
+
+      .manifesto-main p {
+        max-width: 420px;
+        margin: 35px 0 0;
+        color: rgba(251, 248, 233, 0.76);
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .side {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .card {
+        position: relative;
+        overflow: hidden;
+        padding: 28px;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+      }
+
+      .card h4 {
+        margin: 0 0 46px;
+        font-size: 22px;
+      }
+
+      .card p {
+        max-width: 240px;
+        margin: 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .num {
+        position: absolute;
+        top: 19px;
+        right: 22px;
+        color: var(--yellow);
+        font: 12px var(--mono);
+      }
+
+      .mark {
+        position: absolute;
+        right: 22px;
+        bottom: 20px;
+        width: 55px;
+        height: 55px;
+        border: 1px solid var(--ink);
+        border-radius: 50%;
+      }
+
+      .mark::after {
+        position: absolute;
+        inset: 12px;
+        border-radius: 50%;
+        background: var(--teal);
+        content: "";
+      }
+
+      .dark {
+        background: var(--ink);
+        color: var(--cream);
+      }
+
+      .dark .kicker {
+        color: var(--yellow);
+      }
+
+      .dark h2 {
+        color: var(--cream);
+      }
+
+      .dark h2 em {
+        color: var(--yellow);
+      }
+
+      .dark .copy {
+        color: rgba(244, 240, 217, 0.65);
+      }
+
+      .snap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        border-top: 1px solid rgba(244, 240, 217, 0.24);
+        border-left: 1px solid rgba(244, 240, 217, 0.24);
+      }
+
+      .cell {
+        min-height: 170px;
+        padding: 25px;
+        border-right: 1px solid rgba(244, 240, 217, 0.24);
+        border-bottom: 1px solid rgba(244, 240, 217, 0.24);
+      }
+
+      .label {
+        color: rgba(244, 240, 217, 0.52);
+        font: 10px var(--mono);
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
+      .value {
+        margin-top: 28px;
+        font: 800 clamp(25px, 4vw, 47px) var(--display);
+        letter-spacing: -0.06em;
+      }
+
+      .value.accent {
+        color: var(--yellow);
+      }
+
+      .address {
+        display: flex;
+        grid-column: 1 / -1;
+        align-items: center;
+        justify-content: space-between;
+        gap: 24px;
+        min-height: auto;
+      }
+
+      .address p {
+        margin: 6px 0 0;
+        color: rgba(244, 240, 217, 0.58);
+        font-size: 12px;
+      }
+
+      .copybtn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        cursor: pointer;
+        border: 1px solid rgba(244, 240, 217, 0.38);
+        border-radius: 999px;
+        padding: 11px 14px;
+        background: transparent;
+        color: var(--cream);
+        font: 10px var(--mono);
+        white-space: nowrap;
+      }
+
+      .copybtn:hover {
+        border-color: var(--yellow);
+        background: var(--yellow);
+        color: var(--ink);
+      }
+
+      .nft-section {
+        background: var(--teal);
+      }
+
+      .nft-panel {
+        position: relative;
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: center;
+        gap: 30px;
+        min-height: 480px;
+        overflow: hidden;
+        padding: 56px;
+        border: 1px solid var(--ink);
+        background: var(--teal);
+      }
+
+      .nft-copy {
+        position: relative;
+        z-index: 2;
+      }
+
+      .nft-copy .kicker {
+        color: rgba(16, 36, 27, 0.66);
+      }
+
+      .nft-copy h2 {
+        margin: 22px 0 18px;
+        font-size: clamp(44px, 6vw, 78px);
+        line-height: 0.88;
+      }
+
+      .nft-copy h2 em {
+        color: var(--yellow);
+        font-style: normal;
+      }
+
+      .nft-copy p {
+        max-width: 400px;
+        margin: 0;
+        color: rgba(16, 36, 27, 0.67);
+        font-size: 15px;
+        line-height: 1.6;
+      }
+
+      .nft-status {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 25px;
+        padding: 8px 11px;
+        border: 1px solid rgba(16, 36, 27, 0.35);
+        border-radius: 999px;
+        font: 10px var(--mono);
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+      }
+
+      .nft-status-dot {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: var(--yellow);
+        box-shadow: 0 0 0 4px rgba(255, 209, 63, 0.2);
+      }
+
+      .nft-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .nft-follow {
+        border-color: rgba(16, 36, 27, 0.4);
+        background: transparent;
+      }
+
+      .nft-buy {
+        border-color: var(--ink);
+        background: var(--yellow);
+        color: var(--ink);
+        box-shadow: 4px 4px 0 var(--ink);
+      }
+
+      .nft-buy:hover {
+        background: var(--paper);
+        box-shadow: 6px 6px 0 var(--ink);
+      }
+
+      .nft-visual {
+        position: relative;
+        display: grid;
+        place-items: center;
+        min-height: 350px;
+      }
+
+      .nft-ring {
+        position: absolute;
+        border: 1px dashed rgba(16, 36, 27, 0.28);
+        border-radius: 50%;
+      }
+
+      .nft-ring-one {
+        width: 340px;
+        aspect-ratio: 1;
+        transform: rotate(18deg);
+      }
+
+      .nft-ring-two {
+        width: 245px;
+        aspect-ratio: 1;
+        border-style: solid;
+        opacity: 0.45;
+        transform: rotate(-26deg);
+      }
+
+      .nft-card {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: min(270px, 70vw);
+        aspect-ratio: 0.8;
+        padding: 20px;
+        border: 2px solid var(--ink);
+        background: var(--yellow);
+        box-shadow: 13px 13px 0 var(--ink);
+        transform: rotate(6deg);
+      }
+
+      .nft-card span,
+      .nft-card small {
+        font: 10px var(--mono);
+        letter-spacing: 0.08em;
+      }
+
+      .nft-card strong {
+        font: 800 clamp(38px, 5vw, 62px) var(--display);
+        line-height: 0.82;
+        letter-spacing: -0.08em;
+      }
+
+      .nft-card small {
+        color: rgba(16, 36, 27, 0.66);
+        line-height: 1.4;
+      }
+
+      .nft-card::after {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        left: 20px;
+        height: 2px;
+        background: var(--ink);
+        content: "";
+        transform: rotate(-11deg);
+      }
+
+      .nft-spark {
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        border: 2px solid var(--ink);
+        background: var(--yellow);
+        transform: rotate(45deg);
+      }
+
+      .nft-spark-one {
+        top: 8%;
+        right: 10%;
+      }
+
+      .nft-spark-two {
+        bottom: 9%;
+        left: 10%;
+        width: 9px;
+        height: 9px;
+        background: var(--ink);
+      }
+
+      .how {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+      }
+
+      .howcard {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        min-height: 265px;
+        padding: 28px;
+        border: 1px solid var(--ink);
+        background: var(--paper);
+        transition:
+          transform 0.25s ease,
+          background-color 0.25s ease;
+      }
+
+      .howcard:hover {
+        background: var(--yellow);
+        transform: translateY(-8px) rotate(-0.5deg);
+      }
+
+      .howcard small {
+        color: var(--green);
+        font: 12px var(--mono);
+      }
+
+      .howcard h3 {
+        margin: 30px 0 0;
+        font-size: 30px;
+        line-height: 1;
+      }
+
+      .howcard p {
+        margin: 20px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.55;
+      }
+
+      .howcard b {
+        font: 24px var(--mono);
+      }
+
+      .cta {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 30px;
+        min-height: 240px;
+        margin-top: 88px;
+        overflow: hidden;
+        padding: 48px;
+        border: 1px solid var(--ink);
+        background: var(--teal);
+      }
+
+      .cta::before {
+        position: absolute;
+        right: -20px;
+        bottom: -50px;
+        color: rgba(16, 36, 27, 0.08);
+        content: "$FRINKRH";
+        font: 800 150px var(--display);
+        letter-spacing: -0.1em;
+        pointer-events: none;
+      }
+
+      .cta h2,
+      .cta p {
+        position: relative;
+      }
+
+      .cta h2 {
+        margin: 0;
+        font-size: clamp(34px, 5vw, 65px);
+        line-height: 0.92;
+      }
+
+      .cta p {
+        max-width: 390px;
+        margin: 18px 0 0;
+        color: rgba(16, 36, 27, 0.65);
+        font-size: 14px;
+        line-height: 1.5;
+      }
+
+      .footer {
+        padding: 34px 0 44px;
+        border-top: 1px solid rgba(16, 36, 27, 0.2);
+      }
+
+      .foottop,
+      .footbottom {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 30px;
+      }
+
+      .footnote {
+        max-width: 360px;
+        margin: 17px 0 0;
+        color: var(--muted);
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .footlinks {
+        display: flex;
+        align-items: center;
+        gap: 25px;
+      }
+
+      .footbottom {
+        align-items: center;
+        margin-top: 70px;
+        padding-top: 18px;
+        border-top: 1px solid rgba(16, 36, 27, 0.12);
+        color: var(--muted);
+        font: 10px var(--mono);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .toast {
+        position: fixed;
+        z-index: 50;
+        bottom: 24px;
+        left: 50%;
+        padding: 12px 17px;
+        border: 1px solid var(--ink);
+        background: var(--yellow);
+        box-shadow: 5px 5px 0 var(--ink);
+        font: 11px var(--mono);
+        transform: translateX(-50%);
+      }
+
+      .cursor,
+      .ring {
+        position: fixed;
+        z-index: 60;
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(-50%, -50%);
+      }
+
+      .cursor {
+        width: 7px;
+        height: 7px;
+        background: var(--yellow);
+      }
+
+      .ring {
+        width: 30px;
+        height: 30px;
+        border: 1px solid rgba(16, 36, 27, 0.55);
+        transition:
+          width 0.2s ease,
+          height 0.2s ease,
+          background-color 0.2s ease;
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+
+      .reveal.show {
+        animation: reveal 0.7s cubic-bezier(0.22, 0.8, 0.24, 1) forwards;
+      }
+
+      @keyframes drift {
+        0%,
+        100% {
+          transform: translateY(0) rotate(-2deg);
+        }
+        50% {
+          transform: translateY(-14px) rotate(2deg);
+        }
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 0.42;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 0.7;
+          transform: scale(1.08);
+        }
+      }
+
+      @keyframes marquee {
+        to {
+          transform: translateX(-50%);
+        }
+      }
+
+      @keyframes reveal {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+
+      @media (max-width: 800px) {
+        .wrap {
+          width: min(calc(100% - 30px), 620px);
+        }
+
+        .nav,
+        .launch {
+          display: none;
+        }
+
+        .menu {
+          display: inline-flex;
+        }
+
+        .hero {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 45px 0 70px;
+        }
+
+        .hero-art {
+          min-height: 430px;
+          margin-top: 20px;
+        }
+
+        .scroll {
+          display: none;
+        }
+
+        .section {
+          padding: 95px 0;
+        }
+
+        .intro {
+          grid-template-columns: 1fr;
+          gap: 18px;
+          margin-bottom: 34px;
+        }
+
+        .manifesto {
+          grid-template-columns: 1fr;
+        }
+
+        .manifesto-main {
+          min-height: 340px;
+          padding: 27px;
+        }
+
+        .snap {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .address {
+          display: block;
+        }
+
+        .copybtn {
+          margin-top: 18px;
+        }
+
+        .nft-panel {
+          grid-template-columns: 1fr;
+          min-height: auto;
+          padding: 30px 25px 42px;
+        }
+
+        .nft-visual {
+          min-height: 310px;
+          margin-top: 12px;
+        }
+
+        .nft-ring-one {
+          width: 280px;
+        }
+
+        .nft-ring-two {
+          width: 205px;
+        }
+
+        .how {
+          grid-template-columns: 1fr;
+        }
+
+        .howcard {
+          min-height: 210px;
+        }
+
+        .cta {
+          grid-template-columns: 1fr;
+          min-height: 0;
+          margin-top: 60px;
+          padding: 30px 25px;
+        }
+
+        .foottop,
+        .footbottom {
+          flex-direction: column;
+        }
+
+        .footlinks {
+          flex-wrap: wrap;
+        }
+
+        .footbottom {
+          margin-top: 45px;
+        }
+
+        .cursor,
+        .ring {
+          display: none;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        *,
+        *::before,
+        *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+
+        .reveal {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site">
+      <div class="noise" aria-hidden="true"></div>
+      <div class="cursor" aria-hidden="true"></div>
+      <div class="ring" aria-hidden="true"></div>
+
+      <header class="wrap topbar">
+        <a class="brand" href="#top" aria-label="FrinkRH home">
+          <img src="https://i.imgur.com/wBfcuaN.png" alt="FrinkRH character" />
+          <strong>Frink<span>RH</span></strong>
+        </a>
+
+        <nav class="nav" aria-label="Primary navigation">
+          <a href="#story">The story</a>
+          <a href="#snapshot">Snapshot</a>
+          <a href="#nft">NFT lab</a>
+          <a href="#how">How to join</a>
+        </nav>
+
+        <a class="launch" href="https://pools.trade/" target="_blank" rel="noreferrer">
+          Launch on Pools <span aria-hidden="true">↗</span>
+        </a>
+
+        <button class="menu" type="button" aria-label="Open menu" aria-expanded="false">
+          <span class="menu-glyph" aria-hidden="true"></span>
+        </button>
+      </header>
+
+      <main>
+        <section class="wrap hero" id="top">
+          <canvas aria-hidden="true"></canvas>
+
+          <div>
+            <div class="eyebrow"><i></i> Community experiment / Robinhood Chain</div>
+            <h1>The <span class="outline">odd</span><br />one out<span class="sun">.</span></h1>
+            <p class="lede">
+              FrinkRH is a community-first memecoin with a lab coat, a loud internet presence,
+              and absolutely no interest in acting normal.
+            </p>
+            <div class="actions">
+              <a class="primary" href="https://pools.trade/" target="_blank" rel="noreferrer">
+                Enter Pools.trade <span aria-hidden="true">↗</span>
+              </a>
+              <a class="quiet" href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">
+                Follow the lab <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+            <div class="scroll"><i></i> scroll to investigate</div>
+          </div>
+
+          <div class="hero-art">
+            <div class="orbit" aria-hidden="true"></div>
+            <div class="tag top">SPECIMEN: $FRINKRH</div>
+            <div class="hero-img">
+              <img
+                src="https://i.imgur.com/wBfcuaN.png"
+                alt="FrinkRH, the curious lab-coated character"
+              />
+            </div>
+            <div class="tag bottom">STATUS: UNBOTHERED</div>
+          </div>
+        </section>
+
+        <div class="ticker" aria-label="FrinkRH community signal">
+          <div class="track">
+            <div class="ticker-item">
+              <span>$FRINKRH</span>
+              <b>COMMUNITY FIRST</b>
+              <span aria-hidden="true">◆</span>
+              <span>ROBINHOOD CHAIN</span>
+              <b>POOLS.TRADE</b>
+              <span aria-hidden="true">◆</span>
+            </div>
+            <div class="ticker-item" aria-hidden="true">
+              <span>$FRINKRH</span>
+              <b>COMMUNITY FIRST</b>
+              <span>◆</span>
+              <span>ROBINHOOD CHAIN</span>
+              <b>POOLS.TRADE</b>
+              <span>◆</span>
+            </div>
+          </div>
+        </div>
+
+        <section class="wrap section" id="story">
+          <div class="intro reveal">
+            <div class="kicker">01 / The thesis</div>
+            <div>
+              <h2>A little <em>weird.</em><br />A lot of together.</h2>
+              <p class="copy">
+                No grand promises. No pretend utility. Just a recognizable character, a shared
+                joke, and a community finding its corner of the chain.
+              </p>
+            </div>
+          </div>
+
+          <div class="manifesto reveal">
+            <article class="manifesto-main">
+              <span class="mono">FIELD NOTES / 001</span>
+              <div>
+                <h3>Curiosity is a community sport.</h3>
+                <p>
+                  FrinkRH gives the timeline something to rally around: a bright yellow outlier
+                  with a curious mind and a very online point of view.
+                </p>
+              </div>
+            </article>
+
+            <div class="side">
+              <article class="card">
+                <span class="num">01</span>
+                <h4>People before polish.</h4>
+                <p>
+                  The community is the product. Share the signal, bring your own strange, and
+                  make the room more interesting.
+                </p>
+                <span class="mark" aria-hidden="true"></span>
+              </article>
+              <article class="card">
+                <span class="num">02</span>
+                <h4>Memecoin, honestly.</h4>
+                <p>
+                  We are here for the culture and the experiment. Read the disclaimer. Keep your
+                  expectations grounded.
+                </p>
+                <span class="mark" aria-hidden="true"></span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="dark section" id="snapshot">
+          <div class="wrap">
+            <div class="intro reveal">
+              <div class="kicker">02 / Read the label</div>
+              <div>
+                <h2>Small token.<br /><em>Big specimen.</em></h2>
+                <p class="copy">
+                  The useful facts, without the fictional roadmap. Keep this page bookmarked for
+                  the launch signal.
+                </p>
+              </div>
+            </div>
+
+            <div class="snap reveal">
+              <div class="cell">
+                <div class="label">Name</div>
+                <div class="value">FrinkRH</div>
+              </div>
+              <div class="cell">
+                <div class="label">Ticker</div>
+                <div class="value accent">$FRINKRH</div>
+              </div>
+              <div class="cell">
+                <div class="label">Network</div>
+                <div class="value">Robinhood Chain</div>
+              </div>
+              <div class="cell">
+                <div class="label">Launch venue</div>
+                <div class="value">Pools.trade</div>
+              </div>
+              <div class="cell address">
+                <div>
+                  <div class="label">Contract address / coming soon</div>
+                  <p>Placeholder only. Replace this string before sharing any contract details.</p>
+                </div>
+                <button class="copybtn" type="button" aria-label="Copy contract placeholder">
+                  <span class="copy-label">Copy placeholder</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="nft-section section" id="nft" aria-labelledby="nft-title">
+          <div class="wrap">
+            <div class="nft-panel reveal">
+              <div class="nft-copy">
+                <div class="kicker">03 / The collection lab</div>
+                <div class="nft-status"><span class="nft-status-dot"></span> Coming soon</div>
+                <h2 id="nft-title">FrinkRH<br /><em>specimens.</em></h2>
+                <p>
+                  Something collectible is taking shape in the lab. NFT details, artwork, and
+                  mint information will be shared when the experiment is ready.
+                </p>
+                <div class="nft-actions">
+                  <a
+                    class="primary nft-buy"
+                    href="https://opensea.com/"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Buy NFT on OpenSea <span aria-hidden="true">↗</span>
+                  </a>
+                  <a class="quiet nft-follow" href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">
+                    Get the signal <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="nft-visual" aria-hidden="true">
+                <div class="nft-ring nft-ring-one"></div>
+                <div class="nft-ring nft-ring-two"></div>
+                <div class="nft-card">
+                  <span>FRINKRH / NFT-?</span>
+                  <strong>COMING<br />SOON</strong>
+                  <small>COLLECTION STATUS: IN THE LAB</small>
+                </div>
+                <div class="nft-spark nft-spark-one"></div>
+                <div class="nft-spark nft-spark-two"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="wrap section" id="how">
+          <div class="intro reveal">
+            <div class="kicker">04 / Join the experiment</div>
+            <div>
+              <h2>Three moves.<br /><em>No secret handshake.</em></h2>
+            </div>
+          </div>
+
+          <div class="how reveal">
+            <article class="howcard">
+              <small>MOVE 01</small>
+              <div>
+                <h3>Find the signal.</h3>
+                <p>Follow the official account for the cleanest launch updates and community noise.</p>
+              </div>
+              <b aria-hidden="true">↘</b>
+            </article>
+            <article class="howcard">
+              <small>MOVE 02</small>
+              <div>
+                <h3>Bring a friend.</h3>
+                <p>Memes, questions, curiosity — the lab is more fun when the room is full.</p>
+              </div>
+              <b aria-hidden="true">↘</b>
+            </article>
+            <article class="howcard">
+              <small>MOVE 03</small>
+              <div>
+                <h3>Check Pools.trade.</h3>
+                <p>When launch time arrives, use the official destination and verify details yourself.</p>
+              </div>
+              <b aria-hidden="true">↘</b>
+            </article>
+          </div>
+
+          <div class="cta reveal">
+            <div>
+              <h2>Meet us<br />on-chain.</h2>
+              <p>
+                Launch destination: Pools.trade on Robinhood Chain. This button goes to the venue
+                homepage until an exact pool URL is available.
+              </p>
+            </div>
+            <a class="primary" href="https://pools.trade/" target="_blank" rel="noreferrer">
+              Open Pools.trade <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="wrap footer">
+        <div class="foottop">
+          <div>
+            <a class="brand" href="#top">
+              <img src="https://i.imgur.com/wBfcuaN.png" alt="FrinkRH character" />
+              <strong>Frink<span>RH</span></strong>
+            </a>
+            <p class="footnote">
+              A community-first memecoin experiment launching on Pools.trade via Robinhood Chain.
+            </p>
+          </div>
+          <div class="footlinks">
+            <a href="https://x.com/Frink_RH" target="_blank" rel="noreferrer">
+              X / @Frink_RH <span aria-hidden="true">↗</span>
+            </a>
+            <a href="#snapshot">Token snapshot</a>
+            <a href="#nft">NFT lab</a>
+            <a href="https://opensea.com/" target="_blank" rel="noreferrer">
+              OpenSea <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+        <div class="footbottom">
+          <span>© FrinkRH community</span>
+          <span>Memecoin / no guarantees / do your own research</span>
+        </div>
+      </footer>
+
+      <div class="toast" role="status" hidden>Placeholder copied — update before launch</div>
+    </div>
+
+    <script>
+      (() => {
+        const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        const canvas = document.querySelector("canvas");
+        const context = canvas && canvas.getContext("2d");
+
+        if (canvas && context) {
+          const particles = Array.from({ length: reduceMotion ? 18 : 52 }, (_, index) => ({
+            x: Math.random(),
+            y: Math.random(),
+            radius: Math.random() * 1.8 + 0.4,
+            alpha: Math.random() * 0.35 + 0.1,
+            phase: index * 0.7,
+            speed: Math.random() * 0.00018 + 0.00005,
+          }));
+
+          let animationFrame = 0;
+          let width = 0;
+          let height = 0;
+
+          const resize = () => {
+            const density = window.devicePixelRatio || 1;
+            width = canvas.clientWidth;
+            height = canvas.clientHeight;
+            canvas.width = width * density;
+            canvas.height = height * density;
+            context.setTransform(density, 0, 0, density, 0, 0);
+          };
+
+          const paint = (time) => {
+            context.clearRect(0, 0, width, height);
+
+            particles.forEach((particle) => {
+              const x =
+                particle.x * width +
+                Math.sin(time * particle.speed + particle.phase) * 18;
+              const y =
+                ((particle.y +
+                  (reduceMotion ? 0 : time * particle.speed * 0.12)) %
+                  1) *
+                height;
+
+              context.beginPath();
+              context.arc(x, y, particle.radius, 0, Math.PI * 2);
+              context.fillStyle = `rgba(25,121,78,${particle.alpha})`;
+              context.fill();
+            });
+
+            if (!reduceMotion) {
+              animationFrame = window.requestAnimationFrame(paint);
+            }
+          };
+
+          resize();
+          window.addEventListener("resize", resize);
+
+          if (reduceMotion) {
+            paint(0);
+          } else {
+            animationFrame = window.requestAnimationFrame(paint);
+          }
+        }
+
+        const cursor = document.querySelector(".cursor");
+        const ring = document.querySelector(".ring");
+
+        if (cursor && ring && !window.matchMedia("(pointer: coarse)").matches) {
+          window.addEventListener("mousemove", (event) => {
+            cursor.style.left = `${event.clientX}px`;
+            cursor.style.top = `${event.clientY}px`;
+            ring.style.left = `${event.clientX}px`;
+            ring.style.top = `${event.clientY}px`;
+          });
+
+          window.addEventListener("mouseover", (event) => {
+            if (event.target.closest("a, button")) {
+              ring.style.width = "44px";
+              ring.style.height = "44px";
+              ring.style.backgroundColor = "rgba(255,209,63,.16)";
+            }
+          });
+
+          window.addEventListener("mouseout", (event) => {
+            if (event.target.closest("a, button")) {
+              ring.style.width = "30px";
+              ring.style.height = "30px";
+              ring.style.backgroundColor = "transparent";
+            }
+          });
+        }
+
+        const menuButton = document.querySelector(".menu");
+
+        const closeMenu = () => {
+          const mobileNav = document.querySelector(".mobile-nav");
+          if (mobileNav) {
+            mobileNav.remove();
+          }
+          menuButton.setAttribute("aria-expanded", "false");
+          menuButton.setAttribute("aria-label", "Open menu");
+          menuButton.querySelector(".menu-glyph").classList.remove("is-close");
+        };
+
+        const openMenu = () => {
+          const mobileNav = document.createElement("nav");
+          mobileNav.className = "mobile-nav";
+          mobileNav.setAttribute("aria-label", "Mobile navigation");
+          mobileNav.innerHTML = `
+            <a href="#story">The story</a>
+            <a href="#snapshot">Snapshot</a>
+            <a href="#nft">NFT lab</a>
+            <a href="#how">How to join</a>
+            <a href="https://pools.trade/" target="_blank" rel="noreferrer">Open Pools.trade</a>
+          `;
+
+          mobileNav.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", closeMenu);
+          });
+
+          document.querySelector(".topbar").append(mobileNav);
+          menuButton.setAttribute("aria-expanded", "true");
+          menuButton.setAttribute("aria-label", "Close menu");
+          menuButton.querySelector(".menu-glyph").classList.add("is-close");
+        };
+
+        menuButton.addEventListener("click", () => {
+          if (document.querySelector(".mobile-nav")) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+
+        document.querySelectorAll(".reveal").forEach((element) => {
+          if (reduceMotion) {
+            element.classList.add("show");
+            return;
+          }
+
+          const observer = new IntersectionObserver(
+            ([entry]) => {
+              if (entry.isIntersecting) {
+                element.classList.add("show");
+                observer.disconnect();
+              }
+            },
+            { threshold: 0.12 },
+          );
+
+          observer.observe(element);
+        });
+
+        const copyButton = document.querySelector(".copybtn");
+        const copyLabel = copyButton.querySelector(".copy-label");
+        const toast = document.querySelector(".toast");
+        let toastTimer;
+        let copyTimer;
+
+        copyButton.addEventListener("click", async () => {
+          try {
+            await navigator.clipboard.writeText("CONTRACT_COMING_SOON_UPDATE_ME");
+            copyLabel.textContent = "Copied";
+            toast.hidden = false;
+            clearTimeout(toastTimer);
+            clearTimeout(copyTimer);
+            toastTimer = window.setTimeout(() => {
+              toast.hidden = true;
+            }, 2200);
+            copyTimer = window.setTimeout(() => {
+              copyLabel.textContent = "Copy placeholder";
+            }, 2200);
+          } catch {
+            copyLabel.textContent = "Copy unavailable";
+          }
+        });
+      })();
+    </script>
+  </body>
 </html>
