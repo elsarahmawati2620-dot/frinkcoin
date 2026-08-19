@@ -605,12 +605,12 @@
     <p class="tagline">2500 on-chain specimens, minted by the curve</p>
     <p class="subtitle">One whole token mints one Frink.<br>The lab does the rest.</p>
     <div class="btn-group">
-      <a href="https://utoken.gg" target="_blank" class="btn btn-primary">Buy $uFRINK</a>
+      <a href="https://utoken.gg/token/0x53de5a6b7aba415b66df1b2e5d89af27c281eeef" target="_blank" class="btn btn-primary">Buy $uFRINK</a>
       <a href="https://x.com/Frink_RH" target="_blank" class="btn btn-secondary">Follow on X</a>
     </div>
     <div class="ca-box" onclick="copyCA()" title="Click to copy">
       <span class="ca-label">CA</span>
-      <span id="ca-text">Coming Soon — Verify on X</span>
+      <span id="ca-text">0x53de5a6b7aba415b66df1b2e5d89af27c281eeef</span>
     </div>
   </section>
 
@@ -726,12 +726,12 @@
       <div class="step">
         <div class="step-num">1</div>
         <h3>Go to utoken.gg</h3>
-        <p>Visit <a href="https://utoken.gg" target="_blank" style="color:var(--green)">utoken.gg</a> and find $uFRINK when it launches.</p>
+        <p>Go to <a href="https://utoken.gg/token/0x53de5a6b7aba415b66df1b2e5d89af27c281eeef" target="_blank" style="color:var(--green)">utoken.gg</a> and buy $uFRINK.</p>
       </div>
       <div class="step">
         <div class="step-num">2</div>
         <h3>Connect Wallet</h3>
-        <p>Use a wallet that supports the network used by utoken.gg.</p>
+        <p>Use a wallet that supports the network used by utoken.gg / Robinhood Chain.</p>
       </div>
       <div class="step">
         <div class="step-num">3</div>
@@ -753,7 +753,7 @@
       $uFRINK is for the diggers, the meme lords, and everyone who believes a mad experiment can steal from the whales.
     </p>
     <div class="btn-group">
-      <a href="https://utoken.gg" target="_blank" class="btn btn-primary">Buy $uFRINK</a>
+      <a href="https://utoken.gg/token/0x53de5a6b7aba415b66df1b2e5d89af27c281eeef" target="_blank" class="btn btn-primary">Buy $uFRINK</a>
       <a href="https://x.com/Frink_RH" target="_blank" class="btn btn-secondary">Follow @Frink_RH</a>
     </div>
   </section>
@@ -774,7 +774,7 @@
           How do I get one?
           <span>+</span>
         </button>
-        <div class="faq-a">Buy whole $uFRINK tokens on <a href="https://utoken.gg" target="_blank" style="color:var(--green)">utoken.gg</a>. Each full token mints one specimen directly to your wallet. Always verify the CA on @Frink_RH.</div>
+        <div class="faq-a">Buy whole $uFRINK tokens on <a href="https://utoken.gg/token/0x53de5a6b7aba415b66df1b2e5d89af27c281eeef" target="_blank" style="color:var(--green)">utoken.gg</a>. Each full token mints one specimen directly to your wallet. Always verify the CA.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="this.parentElement.classList.toggle('open')">
@@ -851,10 +851,6 @@
 
     function copyCA() {
       const text = document.getElementById('ca-text').innerText;
-      if (text.includes('Coming Soon')) {
-        alert('Contract address coming soon. Follow @Frink_RH for the official CA.');
-        return;
-      }
       navigator.clipboard.writeText(text).then(() => {
         alert('Contract address copied!');
       });
